@@ -4,7 +4,9 @@
   "description": "An easy to use encoder written using Node and AWS SQS/S3.",
   "main": "src/encoder.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/*.spec.js",
+    "start": "node src/start.js",
+    "lint": "esw .eslintrc.js src/ lib/ tests/ -w --fix --ignore-pattern !.eslintrc.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,17 @@
   },
   "homepage": "https://github.com/cgdibble/encoder#readme",
   "dependencies": {
+    "consistent-failables": "^1.0.5",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
     "mocha": "^3.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-prettier": "^2.0.1",
+    "eslint-watch": "^3.1.0",
+    "prettier": "^1.2.2",
+    "prettier-eslint": "^5.1.0"
   }
 }
